@@ -1,4 +1,6 @@
 # local
+from gui import *
+from constraint import *
 
 # standard library
 import os
@@ -20,9 +22,15 @@ path = os.getcwd()
 program_icon = pygame.image.load(path + '/img/icon.png')
 pygame.display.set_icon(program_icon)
 
-################
-## Basic Func ##
-################
+########################
+
+class Window:
+    def __init__(self):
+        self.objects = []
+    
+    def process(self, info):
+        for object in self.objects:
+            object.process(info)
 
 def draw_background(screen):
     screen.fill((250, 218, 221))
@@ -45,6 +53,9 @@ def update_display():
 ###############
 ## Prog Loop ##
 ###############
+
+cad_window = Window()
+
 run = True
 window = "cad"
 while run:
@@ -54,8 +65,7 @@ while run:
         case "menu":
             pass
         case "cad":
-            pass
-            # cad_window.run([screen])
+            cad_window.process([screen])
         case _:
             pass
     update_display()
