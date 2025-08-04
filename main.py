@@ -1,6 +1,6 @@
 # local
 from gui import *
-from constraint import *
+from ecs import *
 
 # standard library
 import os
