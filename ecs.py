@@ -16,7 +16,6 @@ vertical
 radius
 length
 
-fixed
 parallel
 perpendicular
 coincent
